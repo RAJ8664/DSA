@@ -1,5 +1,5 @@
 /*
-    TC--> best and average case O(nlon);
+    TC--> best and average case O(nlogn);
             worst case O(n^2);
     SC--> O(1) //not counting the recursion stack space
 
