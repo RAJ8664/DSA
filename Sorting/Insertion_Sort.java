@@ -18,11 +18,12 @@ public class Insertion_Sort {
     public static void Insertion_Sort(int[] arr){
         int n=arr.length;
         for(int i=0;i<n;i++){
-            while(i>0&&arr[i-1]>arr[i]){
-                int temp=arr[i];
-                arr[i]=arr[i-1];
-                arr[i-1]=temp;
-                i--;
+            int j=i;
+            while(j>0&&arr[j-1]>arr[j]){
+                int temp=arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=temp;
+                j--;
             }
         }
     }
