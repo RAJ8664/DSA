@@ -36,5 +36,7 @@ public class sort_an_array_of_0_1_2 {
         for(int i=one_count+zero_count;i<n;i++){
             arr[i]=2;
         }
+        //TC=O(n);
+        //SC=O(1);
     }
 }
