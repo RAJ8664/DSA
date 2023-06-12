@@ -40,7 +40,7 @@ public class Leaders_in_an_array {
         int current_max=arr[n-1];
         ans.add(arr[n-1]);
         for(int i=n-2;i>=0;i--){
-            if(arr[i]>current_max){
+            if(arr[i]>=current_max){
                 ans.add(arr[i]);
                 current_max=arr[i];
             }
