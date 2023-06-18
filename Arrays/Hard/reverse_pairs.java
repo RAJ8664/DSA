@@ -7,6 +7,7 @@ public class reverse_pairs {
         int[] arr1={2,4,1,6,2,3,7};
        System.out.println(mergesort(arr,0,arr.length-1));
         System.out.println(brute_force(arr1));
+        
     }
 
     public static int brute_force(int[] arr){
@@ -20,6 +21,8 @@ public class reverse_pairs {
             }
         }
         return count;
+        //TC=O(n^2);
+        //SC=O(1);
     }
 
 
@@ -35,6 +38,8 @@ public class reverse_pairs {
         count+=mergesort(arr,mid+1,high);
         count+=merge(arr,low,mid,high);
         return count;
+        //TC=O(nlogn);
+        //SC=O(n);
     }
     public static int merge(int[] arr,int low,int mid,int high){
         int n=arr.length;
