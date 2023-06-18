@@ -79,7 +79,7 @@ public class merge_two_sorted_array {
         }
         Arrays.sort(arr1);
         Arrays.sort(arr2);
-        //TC=nlogn+mlogm;
+        //TC=O(nlogn)+O(mlogm);
         //SC=O(1);
     }
 }
