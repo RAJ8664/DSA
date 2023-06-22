@@ -32,6 +32,8 @@ public class Single_element {
             }
         }
         return -1;
+        //TC=O(logn);
+        //SC=O(1);
     }
 
 }
