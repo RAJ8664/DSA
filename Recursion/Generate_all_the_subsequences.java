@@ -39,22 +39,7 @@ public class Generate_all_the_subsequences {
         //SC=O(n);
     }
 
-    public static ArrayList<ArrayList<Integer>> bruteforce(int[] arr){
-        ArrayList<ArrayList<Integer>> ans=new ArrayList<>();
-        int n=arr.length;
-        for(int num=0;num<1<<n;num++){
-            ArrayList<Integer> temp=new ArrayList<>();
-            for(int i=0;i<n;i++){
-                if((num&(1<<i))!=0){
-                    temp.add(arr[i]);
-                }
-            }
-            ans.add(temp);
-        }
-        return ans;
-        //TC=O(n*2^n);
-        //SC=O(n);
-    }
+    
 
     public static ArrayList<String> getsubsequences(String s){
         ArrayList<String> ans=new ArrayList<>();
