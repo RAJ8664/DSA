@@ -35,7 +35,7 @@ public class Ninja_training {
                     max = Math.max(max,points[0][i]);
                 }
             }
-            return max;
+            return dp[day][last] = max;
         }
         if(dp[day][last] != -1){
             return dp[day][last];
