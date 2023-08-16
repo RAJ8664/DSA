@@ -31,7 +31,7 @@ public class Maximum_non_adjacent_sum {
             return dp[ind];
         }
         int pick = arr[ind] + solve(arr,ind - 2, dp);
-        int not_pick = solve(arr,ind, dp);
+        int not_pick = solve(arr,ind - 1 , dp);
         return dp[ind] = Math.max(pick,not_pick);
     }
 
