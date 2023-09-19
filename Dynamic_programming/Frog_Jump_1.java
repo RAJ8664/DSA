@@ -15,9 +15,9 @@ public class Frog_Jump_1 {
             Arrays.fill(dp,-1);
             System.out.println(solve1(arr,arr.length));
         }
-
-
     }
+
+    
     //memoization;
     public static int solve(int[] arr,int ind,int[] dp){
         if(ind == 0){
@@ -32,6 +32,8 @@ public class Frog_Jump_1 {
             two = solve(arr,ind - 2, dp) + Math.abs(arr[ind] - arr[ind - 2]);
         }
         return dp[ind] = Math.min(one,two);
+        //TC = O(n);
+        //SC = O(n) + O(n);
     }
 
     //tabulation
@@ -48,9 +50,6 @@ public class Frog_Jump_1 {
         }
         return dp[n -1];
     }
-
-
-
-
-
+    //TC = O(n);
+    //sc = O(n);
 }
