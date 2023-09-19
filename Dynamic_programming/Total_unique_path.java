@@ -40,6 +40,7 @@ public class Total_unique_path {
 
 
     //DP solution
+    //memoization
     public static int solve(int row, int col, int[][] dp){
         if(row == 0 && col == 0){
             return 1;
@@ -50,8 +51,17 @@ public class Total_unique_path {
         if(dp[row][col] != -1 ){
             return dp[row][col];
         }
-
         return dp[row][col] = solve(row - 1, col,dp) + solve(row, col - 1, dp);
-
     }
+
+    //Tabulation;
+    public static solve1(int row, int col){
+        dp[0][0] = 1;
+        for(int i = 1; i < row; i++){
+            for(int  j = 1; j < col; j++){
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[row - 1][col - 1];
+    } 
 }
