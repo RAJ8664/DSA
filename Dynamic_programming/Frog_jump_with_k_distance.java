@@ -34,7 +34,6 @@ public class Frog_jump_with_k_distance {
                 int energy = solve(arr,ind - j,k,dp) + Math.abs(arr[ind] - arr[ind - j]);
                 min = Math.min(min,energy);
             }
-
         }
         return dp[ind] = min;
     }
@@ -47,13 +46,12 @@ public class Frog_jump_with_k_distance {
             int min = Integer.MAX_VALUE;
             for(int j = 1; j <= k; j++){
                 if(i - j >= 0){
-                    int energy = dp[i - 1] + Math.abs(arr[i] - arr[i - j]);
+                    int energy = dp[i - j] + Math.abs(arr[i] - arr[i - j]);
                     min = Math.min(min,energy);
                 }
             }
             dp[i] = min;
         }
         return dp[n - 1];
-
     }
 }
