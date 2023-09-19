@@ -42,15 +42,15 @@ public class Frog_jump_with_k_distance {
     //tabulation
     public static int solver(int[] arr,int n,int k,int[] dp){
         dp[0] = 0;
-        for(int i = 1; i < n; i++){
+        for(int ind = 1; ind < n; ind++){
             int min = Integer.MAX_VALUE;
             for(int j = 1; j <= k; j++){
-                if(i - j >= 0){
-                    int energy = dp[i - j] + Math.abs(arr[i] - arr[i - j]);
+                if(ind - j >= 0){
+                    int energy = dp[ind - j] + Math.abs(arr[ind] - arr[ind - j]);
                     min = Math.min(min,energy);
                 }
             }
-            dp[i] = min;
+            dp[ind] = min;
         }
         return dp[n - 1];
     }
