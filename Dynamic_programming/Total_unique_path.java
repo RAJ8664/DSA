@@ -21,7 +21,7 @@ public class Total_unique_path {
     }
 
     //recursive solution
-    public static int recursive_solutio(int row, int col){
+    public static int recursive_solution(int row, int col){
         if(row == 0 && col == 0){
             return 1;
         }
@@ -30,9 +30,9 @@ public class Total_unique_path {
         }
         //I am starting from the destination
         //so the condition become up  and left instead of right and down
-        int up = recursive_solutio(row - 1, col);
+        int up = recursive_solution(row - 1, col);
         //same here
-        int left = recursive_solutio(row, col - 1);
+        int left = recursive_solution(row, col - 1);
         return up + left;
         //TC --> O(2 ^ n * m);
         //SC --> O(m + n);
