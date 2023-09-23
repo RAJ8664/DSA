@@ -39,7 +39,7 @@ public class print_the_longest_common_subsequence {
                 i--;
                 j--;
             }
-            else if(s.charAt(i - 1) > t.charAt(j - 1)){
+            else if(dp[i - 1][j] > dp[i][j - 1]){
                 i--;
             }
             else{
