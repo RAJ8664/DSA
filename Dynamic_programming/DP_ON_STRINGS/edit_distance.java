@@ -49,11 +49,11 @@ public class edit_distance {
             return dp[ind1][ind2];
         }
         if(s.charAt(ind1) == t.charAt(ind2)){
-            return dp[ind1][ind2] = solve_recursion(ind1 - 1, ind2 - 1, s, t);
+            return dp[ind1][ind2] = solve_memo(ind1 - 1, ind2 - 1, s, t,dp);
         }
-        int delete = 1 + solve_recursion(ind1 - 1, ind2, s, t);
-        int insert = 1 + solve_recursion(ind1, ind2 - 1, s, t);
-        int replace = 1 + solve_recursion(ind1 -1 , ind2 - 1, s, t);
+        int delete = 1 + solve_memo(ind1 - 1, ind2, s, t,dp);
+        int insert = 1 + solve_memo(ind1, ind2 - 1, s, t,dp);
+        int replace = 1 + solve_memo(ind1 -1 , ind2 - 1, s, t,dp);
         return dp[ind1][ind2] = Math.min(Math.min(insert, replace),delete);
     }
 
