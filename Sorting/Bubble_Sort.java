@@ -32,18 +32,15 @@ public class Bubble_Sort {
         }
     }
 
-    public static void Bubble_Sort(int[] arr){
-        int n=arr.length;
-        for(int i=n-1;i>=1;i--){
-            int maxi=i;
-            for(int j=i-1;j>=0;j--){
-                if(arr[j]>arr[maxi]){
-                    maxi=j;
-                }
-            }
-            int temp=arr[i];
-            arr[i]=arr[maxi];
-            arr[maxi]=temp;
-        }
-    }
+   public static void Bubble_Sort(int[] arr) 
+    { 
+        int n = arr.length; 
+        for (int i = 0; i < n - 1; i++) 
+            for (int j = 0; j < n - i - 1; j++) 
+                if (arr[j] > arr[j + 1]) { 
+                    int temp = arr[j]; 
+                    arr[j] = arr[j + 1]; 
+                    arr[j + 1] = temp; 
+                } 
+    } 
 }
