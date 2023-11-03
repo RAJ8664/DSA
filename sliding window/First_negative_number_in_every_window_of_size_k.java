@@ -24,7 +24,6 @@ public class First_negative_number_in_every_window_of_size_k {
                 if(j - i + 1 <= k){
                     temp. add(arr[j]);
                 }
-
             }
             ans.add(temp);
         }
@@ -46,7 +45,6 @@ public class First_negative_number_in_every_window_of_size_k {
         return fans;
     }
 
-    //optimal_approahc
     public static ArrayList<Integer> optimal_approach(int arr[],int k){
         int n = arr.length;
         ArrayList<Integer> ans = new ArrayList<>();
@@ -69,4 +67,28 @@ public class First_negative_number_in_every_window_of_size_k {
         }
         return ans;
     }
+
+     //optimal solution;
+    public static ArrayList<Integer> first_negative_number(int arr[], int k){
+        // k here is the size of window;
+        int n = arr.length;
+        Queue<Integer> q = new LinkedList<>();
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            if(arr[i] < 0) q.offer(i);
+        }
+        int i = 0;
+        int j = k - 1;
+        while(j < n){
+            if(!q.isEmpty() && q.peek() >= i && q.peek() <= j) ans.add(arr[q.peek()]);
+            else {
+                while(!q.isEmpty() && q.peek() < i) q.poll();
+                if(!q.isEmpty() && q.peek() >= i && q.peek() <= j) ans.add(arr[q.peek()]);
+                else ans.add(0);
+            }
+            i++;
+            j++;
+        }
+        return ans;
+    }    
 }
