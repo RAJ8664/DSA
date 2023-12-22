@@ -27,7 +27,7 @@ public class Diameter_of_tree {
         System.out.println(max[0]);
     }
 
-    //bruteforce approach;
+    //bruteforce approach;m
     public static int Diameter_of_tree_brute(Node root,int max){
         if(root == null){
             return 0;

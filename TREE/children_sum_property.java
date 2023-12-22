@@ -24,7 +24,6 @@ public class children_sum_property {
 
     }
 
-
     public static void change(Node root){
         if(root == null) return;
         int child = 0;
@@ -45,8 +44,6 @@ public class children_sum_property {
         if(root.right != null) total += root.right.data;
         //change the root value if it is not leaf node;
         if(root.left != null || root.right != null) root.data = total;
-
-
     }
 
 
@@ -69,6 +66,4 @@ public class children_sum_property {
         return lh & rh;
 
     }
-
-
 }
