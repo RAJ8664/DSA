@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Euler_Tour_1 {
     public static void main(String[] args) {
-
         //still left to complete;
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -27,33 +26,24 @@ public class Euler_Tour_1 {
         Arrays.fill(index, -1);
 
         int depth[] = new int[n + 1];
-
+        
         dfs(1, -1, adj , flat,depth);
-
+        
         for(int i = 0; i < flat.size(); i++) {
             if(index[flat.get(i)] == -1) {
                 index[flat.get(i)] = i;
             }
-
         }
-
-
+        
         int seg[] = new int[4 * flat.size() + 10];
         build(flat, seg, 0, 0, flat.size() - 1, depth);
-
+        
         //find the lca = (5, 4);
         int a = sc.nextInt();
         int b = sc.nextInt();
         int l = index[a];
         int r = index[b];
         System.out.println(query(flat, seg,0,0,flat.size() - 1, l , r));
-
-
-
-
-
-
-
     }
 
     public static void dfs(int u , int par, ArrayList<ArrayList<Integer>> adj , ArrayList<Integer> flat,int depth[]) {
