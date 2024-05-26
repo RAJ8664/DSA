@@ -21,7 +21,7 @@ public class Longest_Subarray_with_given_Sum_K {
             }
         }
         return maxlength;
-        //TC=O(n);
+        //TC=O(n ^ 2);
         //SC=O(1);
     }
 
