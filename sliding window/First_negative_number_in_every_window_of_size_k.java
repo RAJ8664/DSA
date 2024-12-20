@@ -1,17 +1,18 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class First_negative_number_in_every_window_of_size_k {
     /*Given an array A[] of size N and a positive integer K,
     find the first negative integer for each and every window(contiguous subarray) of size K.
     */
     public static void main(String[] args) {
-        int arr[] = {12, -1, -7, 8, -15, 30, 16, 28};
-        int k = 3;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(), k = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
         ArrayList<Integer> ans = new ArrayList<>();
         ans = optimal_approach(arr,k);
-        for(int i = 0; i < ans.size(); i++){
-            System.out.print(ans.get(i) +" ");
-        }
+        for(int i = 0; i < ans.size(); i++) System.out.print(ans.get(i) + " ");
     }
 
     //bruteforce
@@ -21,9 +22,7 @@ public class First_negative_number_in_every_window_of_size_k {
         for(int i = 0; i < n - k + 1; i++){
             ArrayList<Integer> temp = new ArrayList<>();
             for(int j = i; j < n; j++){
-                if(j - i + 1 <= k){
-                    temp. add(arr[j]);
-                }
+                if(j - i + 1 <= k) temp. add(arr[j]);
             }
             ans.add(temp);
         }
@@ -38,9 +37,7 @@ public class First_negative_number_in_every_window_of_size_k {
                     break;
                 }
             }
-            if (!found) {
-                fans.add(0);
-            }
+            if (!found)  fans.add(0);
         }
         return fans;
     }
@@ -58,12 +55,8 @@ public class First_negative_number_in_every_window_of_size_k {
                     break;
                 }
             }
-            if(found){
-                ans.add(temp);
-            }
-            else{
-                ans.add(0);
-            }
+            if(found) ans.add(temp);
+            else ans.add(0);
         }
         return ans;
     }
@@ -77,8 +70,7 @@ public class First_negative_number_in_every_window_of_size_k {
         for(int i = 0; i < n; i++){
             if(arr[i] < 0) q.offer(i);
         }
-        int i = 0;
-        int j = k - 1;
+        int i = 0, j = k - 1;
         while(j < n){
             if(!q.isEmpty() && q.peek() >= i && q.peek() <= j) ans.add(arr[q.peek()]);
             else {
@@ -86,8 +78,7 @@ public class First_negative_number_in_every_window_of_size_k {
                 if(!q.isEmpty() && q.peek() >= i && q.peek() <= j) ans.add(arr[q.peek()]);
                 else ans.add(0);
             }
-            i++;
-            j++;
+            i++; j++;
         }
         return ans;
     }    
